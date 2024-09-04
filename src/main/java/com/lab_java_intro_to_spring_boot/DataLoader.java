@@ -1,8 +1,8 @@
 package com.lab_java_intro_to_spring_boot;
 
 import com.lab_java_intro_to_spring_boot.model.Employee;
-import com.lab_java_intro_to_spring_boot.model.Enums.Department;
-import com.lab_java_intro_to_spring_boot.model.Enums.EmployeeStatus;
+import com.lab_java_intro_to_spring_boot.Enums.Department;
+import com.lab_java_intro_to_spring_boot.Enums.EmployeeStatus;
 import com.lab_java_intro_to_spring_boot.model.Patient;
 import com.lab_java_intro_to_spring_boot.repository.EmployeeRepository;
 import com.lab_java_intro_to_spring_boot.repository.PatientRepository;
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
