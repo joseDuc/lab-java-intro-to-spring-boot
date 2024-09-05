@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/patients")
+@RequestMapping("/patient")
 public class PatientController {
     @Autowired
     PatientService patientService;
@@ -47,5 +47,10 @@ public class PatientController {
     @GetMapping("/find/employeeStatus")
     public List<Patient> getByEmployeeStatus(EmployeeStatus status){
         return patientService.getByEmployeeStatus(status);
+    }
+
+    @GetMapping("/find/employeeStatusOff")
+    public List<Patient> getByEmployeeStatusOff(){
+        return patientService.getByEmployeeStatus(EmployeeStatus.OFF);
     }
 }
