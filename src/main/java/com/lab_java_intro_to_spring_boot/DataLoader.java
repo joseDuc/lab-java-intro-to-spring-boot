@@ -1,7 +1,7 @@
 package com.lab_java_intro_to_spring_boot;
 
 import com.lab_java_intro_to_spring_boot.model.Employee;
-import com.lab_java_intro_to_spring_boot.Enums.Department;
+import com.lab_java_intro_to_spring_boot.Enums.EmployeeDepartment;
 import com.lab_java_intro_to_spring_boot.Enums.EmployeeStatus;
 import com.lab_java_intro_to_spring_boot.model.Patient;
 import com.lab_java_intro_to_spring_boot.repository.EmployeeRepository;
@@ -30,43 +30,43 @@ public class DataLoader implements CommandLineRunner {
         List<Employee> employees=  new ArrayList<>();
 
         employee=new Employee();
-        employee.setId("356712");
-        employee.setDepartment(Department.CARDIOLOGY);
+        employee.setId(356712);
+        employee.setDepartment(EmployeeDepartment.CARDIOLOGY);
         employee.setName("Alonso Flores");
         employee.setStatus(EmployeeStatus.ON_CALL);
         employees.add(employee);
 
         employee=new Employee();
-        employee.setId("564134");
-        employee.setDepartment(Department.INMMUNOLOGY);
+        employee.setId(564134);
+        employee.setDepartment(EmployeeDepartment.INMMUNOLOGY);
         employee.setName("Sam Ortega");
         employee.setStatus(EmployeeStatus.ON);
         employees.add(employee);
 
         employee=new Employee();
-        employee.setId("761527");
-        employee.setDepartment(Department.CARDIOLOGY);
+        employee.setId(761527);
+        employee.setDepartment(EmployeeDepartment.CARDIOLOGY);
         employee.setName("German Ruiz");
         employee.setStatus(EmployeeStatus.OFF);
         employees.add(employee);
 
         employee=new Employee();
-        employee.setId("166552");
-        employee.setDepartment(Department.PULMONARY);
+        employee.setId(166552);
+        employee.setDepartment(EmployeeDepartment.PULMONARY);
         employee.setName("Maria Lin");
         employee.setStatus(EmployeeStatus.ON);
         employees.add(employee);
 
         employee=new Employee();
-        employee.setId("156545");
-        employee.setDepartment(Department.ORTHOPAEDIC);
+        employee.setId(156545);
+        employee.setDepartment(EmployeeDepartment.ORTHOPAEDIC);
         employee.setName("Paolo Rodriguez");
         employee.setStatus(EmployeeStatus.ON_CALL);
         employees.add(employee);
 
         employee=new Employee();
-        employee.setId("172456");
-        employee.setDepartment(Department.PSYCHIATRIC);
+        employee.setId(172456);
+        employee.setDepartment(EmployeeDepartment.PSYCHIATRIC);
         employee.setName("John Paul Armes");
         employee.setStatus(EmployeeStatus.OFF);
         employees.add(employee);
@@ -81,32 +81,31 @@ public class DataLoader implements CommandLineRunner {
         patient=new Patient();
         patient.setName("Jaime Jordan");
         patient.setDateOfBirth(LocalDate.parse("1984-03-02") );
-        patient.setAdmittedBy(employeeRepository.getReferenceById("564134"));
+        patient.setAdmittedBy(employeeRepository.getReferenceById(564134));
         patients.add(patient);
 
         patient=new Patient();
         patient.setName("Marian Garcia");
         patient.setDateOfBirth(LocalDate.parse("1972-01-12") );
-        patient.setAdmittedBy(employeeRepository.getReferenceById("564134"));
+        patient.setAdmittedBy(employeeRepository.getReferenceById(564134));
         patients.add(patient);
 
         patient=new Patient();
         patient.setName("Julia Dusterdieck");
-        patient.setDateOfBirth(LocalDate.parse("1984-03-02") );
-        patient.setAdmittedBy(employeeRepository.getReferenceById("356712"));
+        patient.setDateOfBirth(LocalDate.parse("1954-06-11") );
+        patient.setAdmittedBy(employeeRepository.getReferenceById(356712));
         patients.add(patient);
 
         patient=new Patient();
         patient.setName("Steve McDuck");
         patient.setDateOfBirth(LocalDate.parse("1931-11-10") );
-        patient.setAdmittedBy(employeeRepository.getReferenceById("761527"));
+        patient.setAdmittedBy(employeeRepository.getReferenceById(761527));
         patients.add(patient);
-
 
         patient=new Patient();
         patient.setName("Marian Garcia");
         patient.setDateOfBirth(LocalDate.parse("1999-02-15") );
-        patient.setAdmittedBy(employeeRepository.getReferenceById("172456"));
+        patient.setAdmittedBy(employeeRepository.getReferenceById(172456));
         patients.add(patient);
 
         patientRepository.saveAll(patients);
